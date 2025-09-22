@@ -2,46 +2,44 @@
 
 ## Overview
 
-The objective of this assessment is to analyze the provided Electric Vehicle (EV) population data and create a frontend dashboard that visualizes key insights about the dataset. This repository contains the necessary data and instructions for you to demonstrate your analytical and dashboard creation skills. Feel free to use any tech stack you want to create the dashboard.
+The objective of this assessment is to analyze the provided Electric Vehicle (EV) population data and create a frontend dashboard that visualizes key insights about the dataset. This repository contains the necessary data and instructions to demonstrate your analytical and dashboard creation skills. The dashboard is built with modern frontend technologies for a smooth, interactive experience.
 
-### We encourage the use of AI and LLM tools for this assessment! However, you must understand what you're building and be able to explain your implementation decisions.
 
-## Dataset
+## Technologies Used 
+- **Frontend:** React (Functional Components, Hooks)
+- **State Management:** Redux
+- **UI & Styling:** Material UI, CSS3, HTML5
+- **Animations:** Framer Motion
+- **Build Tool:** Vite
 
-The Electric Vehicle Population dataset is available in the [Electric Vehicle Population Data (CSV)](./data-to-visualize/Electric_Vehicle_Population_Data.csv) within this repository, for more information about the dataset visit [kaggle dataset](https://www.kaggle.com/datasets/willianoliveiragibin/electric-vehicle-population).
+## Live Demo
 
-**Note:** We've reduced the dataset in the repository to keep the data size small in the frontend bundle.
+[https://electric-vehicle-population-data.netlify.app/](https://electric-vehicle-population-data.netlify.app/)
 
-## Tasks
 
-### Dashboard Creation:
+## Installation  
 
-- Create a frontend dashboard that presents key insights from the dataset.
-- Design the dashboard to effectively communicate important metrics and visualizations.
-- Include visual representations such as charts, graphs, or tables to showcase trends and relationships in the data.
-- Ensure the dashboard is user-friendly and intuitive for exploring the dataset.
+   Clone the repository:   ```  git clone https://github.com/JahirPendhari09/analytics-dashboard-assessment.git  ``` <br/>
+   Go inside project:   ``` cd  analytics-dashboard-assessment ``` <br/>
+   Install the dependencies: ``` npm install ``` <br/>
+   Start the development application: ``` npm run dev ``` <br/>
+   Open your browser and visit: ``` http://localhost:5173 ``` <br/>
 
-### Deployment:
+  
+ ## Features 
+   
+  - Interactive Dashboard: Visualize EV population data with charts and tables.
+  - Responsive Design: Works seamlessly on desktops, tablets, and mobile devices.
+  - Material UI Components: Modern and consistent UI elements.
+  - Animations: Smooth transitions using Framer Motion.
+  - State Management: Centralized data handling with Redux.
+  - Modular Codebase: Clean separation of components, Redux slices, and utility functions.
+  - Fast Development: Built on Vite for lightning-fast development and hot module replacement.
+  
 
-- Deploy your frontend dashboard to a hosting platform of your choice.
-- Make sure the dashboard is publicly accessible.
+ # Credits <br/>
+ 
+   This project was developed by ```Jahir Pendhari```.
+   <p>Feel free to explore, fork, and contribute! 🚀</p>
+  
 
-## Evaluation Criteria
-
-Your submission will be evaluated based on:
-
-- **Analytical Depth:** The depth of your analysis and insights derived from the dataset.
-- **Dashboard Design:** Clarity, aesthetics, and usability of the frontend dashboard.
-- **Insightfulness:** Effectiveness in conveying key insights about electric vehicles.
-
-## Submission Guidelines
-
-- Fork this repository to your GitHub account.
-- Complete your analysis and create the frontend dashboard.
-- Deploy the dashboard to a hosting platform.
-- Update this [README.md](README.md) file with the URL to your live dashboard.
-- **Repository Access:** Keep your repository private to avoid visibility by other candidates. Add the following email addresses as collaborators to the repository, these are our internal emails and will be evaluating your assessment:
-  - vedantp@mapup.ai
-  - ajayap@mapup.ai
-  - atharvd@mapup.ai
-- Finally, please fill out the google form that you received via email to submit the assessment for review.
