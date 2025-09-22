@@ -30,8 +30,8 @@ export default function AppShell({ children }) {
   ]
 
   return (
-    <Box sx={{ display:'flex', minHeight:'100vh', width: '100%' }}>
-      <AppBar position="fixed" color="primary" elevation={1}>
+    <Box sx={{ display:'flex',   minHeight:'100vh', width: '100%', maxWidth: '1400px',  justifyContent: 'center'  }}>
+      <AppBar  color="primary" position='fixed'  elevation={1} >
         <Toolbar>
           <IconButton color="inherit" onClick={()=>dispatch(toggleSidebar())} edge="start" sx={{ mr:1 }}>
             <MenuIcon />
@@ -51,7 +51,20 @@ export default function AppShell({ children }) {
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="left" open={sidebarOpen} onClose={()=>dispatch(closeSidebar())}>
+      <Drawer 
+        anchor="left" 
+        open={sidebarOpen} 
+        onClose={()=>dispatch(closeSidebar())}
+        PaperProps={{
+          sx: {
+            left: 'auto',                 
+            marginLeft: 'auto',           
+            maxWidth: 1400,              
+            width: 280,                   
+            boxSizing: 'border-box'
+          }
+       }}
+      >
         <Box sx={{ width: 280 }} role="presentation" onClick={()=>dispatch(closeSidebar())}>
           <Typography variant="h6" sx={{ px:2.5, py:2, fontWeight:700 }}>Navigation</Typography>
           <Divider />
@@ -66,7 +79,7 @@ export default function AppShell({ children }) {
         </Box>
       </Drawer>
 
-      <Box component="main" sx={{ flex:1, pt: 10 }}>
+      <Box component="main" sx={{ flex:1, pt: 10}}>
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}

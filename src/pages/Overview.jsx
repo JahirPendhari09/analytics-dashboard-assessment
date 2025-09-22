@@ -10,6 +10,7 @@ import CityBar from '../components/charts/CityBar'
 import CafvPie from '../components/charts/CafvPie'
 import EvTypePie from '../components/charts/EvTypePie'
 import BrandLine from '../components/charts/BrandLine'
+import  '../App.css'
 
 export default function Overview(){
   const dispatch = useDispatch()
@@ -35,72 +36,68 @@ export default function Overview(){
   }
 
   return (
-    <Box sx={{ p:3, backgroundColor: 'background.default', minHeight:'100%', pb: 4, width: '100%' }}>
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', marginTop: '20px', gap: '20px'}}>
+    <Box  sx={{ p:3, backgroundColor: 'background.default', minHeight:'100%', pb: 4, width: '100%' }}>
+      <div className='card-item' id='item-1'>
         <Grid item xs={12} md={3} width={'100%'}>
-            <StatCard title="Total EVs (WA)" value={<AnimatedNumber value={waCount} />} />
+          <StatCard title="Total EVs (WA)" value={<AnimatedNumber value={waCount} />} />
         </Grid>
         <Grid item xs={12} md={3} width={'100%'}>
-            <StatCard title="Top Brand" value={topBrand||'—'} />
+          <StatCard title="Top Brand" value={topBrand||'—'} />
         </Grid>
         <Grid item xs={12} md={3} width={'100%'}>
-            <StatCard title={`Growth (${range||'N/A'})`} value={<><AnimatedNumber value={growth} precision={2}/> %</>} />
+          <StatCard title={`Growth (${range||'N/A'})`} value={<><AnimatedNumber value={growth} precision={2}/> %</>} />
         </Grid>
         <Grid item xs={12} md={3} width={'100%'}>
-            <StatCard title="CAFV Count" value={<AnimatedNumber value={cafv.reduce((s,x)=>s+x.value,0)} />} />
+          <StatCard title="CAFV Count" value={<AnimatedNumber value={cafv.reduce((s,x)=>s+x.value,0)} />} />
         </Grid>
       </div>
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', gap: '20px',  marginTop: '20px'}}>
+      <div className='card-item'>
         <Grid item xs={12} md={6} sx={{  width:"100%"}}>
-            <Card>
-                <CardContent>
-                    <Typography variant="h6">EV Count by Year</Typography>
-                    <YearBar data={years} />
-                </CardContent>
-            </Card>
+          <Card>
+            <CardContent>
+              <Typography variant="h6">EV Count by Year</Typography>
+              <YearBar data={years} />
+            </CardContent>
+          </Card>
         </Grid>
         <Grid item xs={12} md={6} sx={{ width:"100%"}}>
-            <Card>
-                <CardContent>
-                    <Typography variant="h6" sx={{ mb:1 }}>EV Distribution by City</Typography>
-                    <CityBar data={cities} />
-                </CardContent>
-            </Card>
+          <Card>
+            <CardContent>
+              <Typography variant="h6" sx={{ mb:1 }}>EV Distribution by City</Typography>
+              <CityBar data={cities} />
+            </CardContent>
+          </Card>
         </Grid>
-        
       </div>
 
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', gap: '20px', marginTop: '20px'}}>
+      <div className='card-item'>
         <Grid item xs={12} md={6} sx={{ width:"100%"}}>
-            <Card>
-                <CardContent>
-                    <Typography variant="h6" sx={{ mb:1 }}>CAFV Eligibility</Typography> 
-                    <CafvPie data={cafv} /> 
-                </CardContent>
-            </Card>
-            
+          <Card>
+            <CardContent>
+              <Typography variant="h6" sx={{ mb:1 }}>CAFV Eligibility</Typography> 
+              <CafvPie data={cafv} /> 
+            </CardContent>
+          </Card>
         </Grid>
-
-         <Grid item xs={12} md={6} sx={{  width:"100%"}}>
-            <Card>
-                <CardContent>
-                    <Typography variant="h6" sx={{ mb:1 }}>EV Types</Typography>
-                    <EvTypePie data={evTypes} />
-                    </CardContent>
-            </Card>
+        <Grid item xs={12} md={6} sx={{  width:"100%"}}>
+          <Card>
+            <CardContent>
+              <Typography variant="h6" sx={{ mb:1 }}>EV Types</Typography>
+              <EvTypePie data={evTypes} />
+            </CardContent>
+          </Card>
         </Grid>
       </div>
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', gap: '20px', marginTop: '20px'}}>
-       
-        <Grid item xs={12} md={6} sx={{ width:"100%"}}>
-            <Card>
-                <CardContent>
-                    <Typography variant="h6" sx={{ mb:1 }}>Brand Distribution</Typography>
-                    <BrandLine data={brandLine} />
-                </CardContent>
-            </Card>
-        </Grid>
 
+      <div className='card-item' >
+        <Grid item xs={12} md={6} sx={{ width:"100%"}}>
+          <Card>
+            <CardContent>
+              <Typography variant="h6" sx={{ mb:1 }}>Brand Distribution</Typography>
+              <BrandLine data={brandLine} />
+            </CardContent>
+          </Card>
+        </Grid>
         <Grid item xs={12} md={6} sx={{ width:"100%"}}>
           <Card>
             <CardContent>
@@ -118,3 +115,4 @@ export default function Overview(){
     </Box>
   )
 }
+

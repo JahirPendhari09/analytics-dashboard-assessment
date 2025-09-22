@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 
 export default function StatCard({ title, value, footer, accent='primary.main' }) {
   return (
-    <motion.div whileHover={{ scale: 1.02 }} transition={{ type:'spring', stiffness:260, damping:18 }}>
-      <Card variant="outlined" sx={{ backgroundColor: 'background.paper', borderRadius: 1, textAlign:"center" }}>
+    <motion.div whileHover={{ scale: 1.02 }} transition={{ type:'spring', stiffness:260, damping:18 }} sx= {{ width: '100%', height: '100%'}}>
+      <Card variant="outlined" sx={{ backgroundColor: 'background.paper', borderRadius: 1, textAlign:"center"}}>
         <CardContent>
           <Typography variant="subtitle2" sx={{ color:'text.secondary', mb: 0.5 }}>{title}</Typography>
           <Typography variant="h4" sx={{ color: accent, fontWeight: 800 }}>{value}</Typography>

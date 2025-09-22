@@ -14,15 +14,15 @@ export default function EvTypePie({ data }) {
       </PieChart>
     </ResponsiveContainer>
     <Box sx={{ marginTop: 2 }}>
-          {data.map((entry, index) => (
-            <Box key={`legend-${index}`} sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-              <Box sx={{ width: 12, height: 12, backgroundColor: ['#5e35b1', '#311b92', '#b388ff'][index], marginRight: 1 }} />
-              <Typography sx={{ color: ['#5e35b1', '#311b92', '#b388ff'][index] }}>
-                {entry.name}: {entry.value}
-              </Typography>
-            </Box>
-          ))}
+      {data.map((entry, index) => (
+        <Box key={`legend-${index}`} sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
+          <Box sx={{ width: 12, height: 12, backgroundColor: ['#5e35b1', '#311b92', '#b388ff'][index], marginRight: 1 }} />
+            <Typography sx={{ color: ['#5e35b1', '#311b92', '#b388ff'][index] }}>
+              {entry.name}: {entry.value}
+            </Typography>
         </Box>
+      ))}
+    </Box>
     </>
   )
 }

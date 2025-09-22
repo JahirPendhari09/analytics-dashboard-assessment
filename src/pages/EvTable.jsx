@@ -16,13 +16,14 @@ import {
 } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchEVData } from '../store/actions';
+import '../App.css'
 
 export default function EvTable() {
   const dispatch = useDispatch();
   const rows = useSelector((s) => s.data.rows);
   const status = useSelector((s) => s.data.status);
   const error = useSelector((s) => s.data.error);
-  const themeMode = useSelector((s) => s.ui.themeMode); // dark/light
+  const themeMode = useSelector((s) => s.ui.themeMode); 
 
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(0);
@@ -68,17 +69,17 @@ export default function EvTable() {
 
   return (
     <Box
+      className="ev-data"
       sx={{
         display: 'flex',
-        width: '100vw',
+        width: '100%',
         justifyContent: 'center',
         backgroundColor: themeMode === 'dark' ? '#111827' : '#f4f4f4',
         overflowX: 'auto',
         p:3
       }}
     >
-      <Box sx={{ width: '90%', maxWidth: '1400px' }}>
-        {/* Header + Search + Export */}
+      <Box sx={{ maxWidth: '100%', margin: 'auto' }}>
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           alignItems="center"
@@ -97,7 +98,7 @@ export default function EvTable() {
                 setPage(0);
               }}
               sx={{
-                backgroundColor: themeMode === 'dark' ? '#2c3e50' : '#fff',
+                // backgroundColor: themeMode === 'dark' ? '#2c3e50' : '#fff',
                 input: { color: themeMode === 'dark' ? '#fff' : '#000' },
               }}
             />
@@ -112,16 +113,10 @@ export default function EvTable() {
           component={Paper}
           sx={{
             maxHeight: '80vh',
-            borderRadius: 2,
+            borderRadius: 1,
             boxShadow: 2,
             backgroundColor: tableBg,
             overflow: 'auto',
-            scrollbarWidth: 'thin',
-            '&::-webkit-scrollbar': { height: 6, width: 6 },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: themeMode === 'dark' ? '#555' : '#ccc',
-              borderRadius: 3,
-            },
           }}
         >
           <Table stickyHeader>
@@ -185,12 +180,6 @@ export default function EvTable() {
           onPageChange={handleChangePage}
           rowsPerPage={rowsPerPage}
           rowsPerPageOptions={[]}
-          sx={{
-            '.MuiTablePagination-toolbar': {
-              backgroundColor: themeMode === 'dark' ? '#1f2a35' : '#e0e0e0',
-              color: themeMode === 'dark' ? '#fff' : '#000',
-            },
-          }}
         />
       </Box>
     </Box>

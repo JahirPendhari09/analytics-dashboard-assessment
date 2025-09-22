@@ -19,7 +19,7 @@ export default function MapView(){
   const center = points.length ? [points[0].lat, points[0].lng] : [47.6062, -122.3321]
 
   return (
-    <Card sx={{p:3}}>
+    <Card sx={{p:3, width: '100%', }}>
       <CardContent>
         <Typography variant="h6" sx={{ mb:1 }}>EV Usage by City (WA)</Typography>
         <MapContainer center={center} zoom={7} style={{ height: 480, width: '100%' }}>
